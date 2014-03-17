@@ -66,38 +66,35 @@ END {
 
 	printf "===============100-200ms  start======================\n"
 	for(k in array_200ms){if(k!=0){print k;}}
-	# for(i=1;i<length(array_200ms);i++){print array_200ms[i];}
 	printf "===============100-200ms  end======================\n"
 
-	printf "===============100-200ms  start======================\n"
-	for(k in array_200ms){if(k!=0){print k;}}
-	# for(i=1;i<length(array_200ms);i++){print array_200ms[i];}
-	printf "===============100-200ms  end======================\n"
+	printf "===============200-300ms  start======================\n"
+	for(k in array_300ms){if(k!=0){print k;}}
+	printf "===============200-300ms  end======================\n"
 
-	printf "===============100-200ms  start======================\n"
-	for(k in array_200ms){if(k!=0){print k;}}
-	# for(i=1;i<length(array_200ms);i++){print array_200ms[i];}
-	printf "===============100-200ms  end======================\n"
+	printf "===============300-500ms  start======================\n"
+	for(k in array_400ms){if(k!=0){print k;}}
+	printf "===============300-500ms  end======================\n"
 
-	printf "===============100-200ms  start======================\n"
-	for(k in array_200ms){if(k!=0){print k;}}
-	# for(i=1;i<length(array_200ms);i++){print array_200ms[i];}
-	printf "===============100-200ms  end======================\n"
+	printf "===============500-1000ms  start======================\n"
+	for(k in array_1000ms){if(k!=0){print k;}}
+	printf "===============500-1000ms  end======================\n"
 
-	printf "===============100-200ms  start======================\n"
-	for(k in array_200ms){if(k!=0){print k;}}
-	# for(i=1;i<length(array_200ms);i++){print array_200ms[i];}
-	printf "===============100-200ms  end======================\n"
+	printf "===============1-2s  start======================\n"
+	for(k in array_2000ms){if(k!=0){print k;}}
+	printf "===============1-2s  end======================\n"
 
-	printf "===============100-200ms  start======================\n"
-	for(k in array_200ms){if(k!=0){print k;}}
-	# for(i=1;i<length(array_200ms);i++){print array_200ms[i];}
-	printf "===============100-200ms  end======================\n"
+	printf "===============2-3s  start======================\n"
+	for(k in array_3000ms){if(k!=0){print k;}}
+	printf "===============2-3s  end======================\n"
 
-	printf "===============100-200ms  start======================\n"
-	for(k in array_200ms){if(k!=0){print k;}}
-	# for(i=1;i<length(array_200ms);i++){print array_200ms[i];}
-	printf "===============100-200ms  end======================\n"						
+	printf "===============3-5s  start======================\n"
+	for(k in array_40000ms){if(k!=0){print k;}}
+	printf "===============3-5s  end======================\n"	
+
+	printf "===============5s以上  start======================\n"
+	for(k in array_50000ms){if(k!=0){print k;}}
+	printf "===============5s以上  end======================\n"					
 
 }
 
