@@ -4,11 +4,6 @@ startTime=$2
 endTime=$3
 minRt=$4
 
-echo $startTime
-echo $endTime
-echo $minRt
-
-
 
 awk  'BEGIN{FS=" "} $3>$4 {print $3,$5,$8 > "tt.log"}'  test.log 
 # awk  '$1>=10 && $2 >="[15/Mar/2014:23:57" && $2 <="[15/Mar/2014:23:58" {print $1,$2,$3}' tt.log 
