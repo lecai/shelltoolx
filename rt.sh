@@ -9,10 +9,9 @@ echo $endTime
 echo $minRt
 
 
+touch result.log
 
-awk  'BEGIN{FS=" "} $3>$4 {print $3,$5,$8 > "tt.log"}'  test.log 
-# awk  '$1>=10 && $2 >="[15/Mar/2014:23:57" && $2 <="[15/Mar/2014:23:58" {print $1,$2,$3}' tt.log 
-awk  '$1>='"$minRt"' && $2>="'"$startTime"'" && $2<="'"$endTime"'" {print $1,$2,$3 > "result.log"}' tt.log 
+awk  'BEGIN{FS=" "} $3>='"$minRt"' && $5>="'"$startTime"'" && $5<="'"$endTime"'" {print $3,$5,$8 > "result.log"}' test.log 
 awk 'BEGIN {
 	    printf "start1\n"
     array_100ms[0]="0-100ms"
@@ -111,5 +110,4 @@ function calc(array, line, time){
 }
 ' result.log
 
-rm -fr  tt.log
 rm -fr result.log
