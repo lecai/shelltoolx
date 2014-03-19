@@ -3,6 +3,7 @@
 startTime=$2
 endTime=$3
 minRt=$4
+logFile=$1
 
 echo $startTime
 echo $endTime
@@ -11,7 +12,7 @@ echo $minRt
 
 touch result.log
 
-awk  'BEGIN{FS=" "} $3>='"$minRt"' && $5>="'"$startTime"'" && $5<="'"$endTime"'" {print $3,$5,$8 > "result.log"}' test.log 
+awk  'BEGIN{FS=" "} $3>='"$minRt"' && $5>="'"$startTime"'" && $5<="'"$endTime"'" {print $3,$5,$8 > "result.log"}' $logFile
 awk 'BEGIN {
 	    printf "start1\n"
     array_100ms[0]="0-100ms"
