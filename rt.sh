@@ -4,10 +4,14 @@ startTime=$2
 endTime=$3
 minRt=$4
 
+echo $startTime
+echo $endTime
+echo $minRt
 
-awk  'BEGIN{FS=" "} $3>$4 {print $3,$5,$8 > "tt.log"}'  test.log 
-# awk  '$1>=10 && $2 >="[15/Mar/2014:23:57" && $2 <="[15/Mar/2014:23:58" {print $1,$2,$3}' tt.log 
-awk  '$1>='"$minRt"' && $2>="'"$startTime"'" && $2<="'"$endTime"'" {print $1,$2,$3 > "result.log"}' tt.log 
+
+touch result.log
+
+awk  'BEGIN{FS=" "} $3>='"$minRt"' && $5>="'"$startTime"'" && $5<="'"$endTime"'" {print $3,$5,$8 > "result.log"}' test.log 
 awk 'BEGIN {
 	    printf "start1\n"
     array_100ms[0]="0-100ms"
@@ -56,39 +60,39 @@ awk 'BEGIN {
 END {
 
     printf "===============0-100ms  start======================\n"
-	for(k in array_100ms){if(k!=0){print k;}}
+	for(k in array_100ms){if(k!=0){print k, array_100ms[k];}}
 	printf "===============0-100ms  end======================\n"
 
 	printf "===============100-200ms  start======================\n"
-	for(k in array_200ms){if(k!=0){print k;}}
+	for(k in array_200ms){if(k!=0){print k,array_200ms[k];}}
 	printf "===============100-200ms  end======================\n"
 
 	printf "===============200-300ms  start======================\n"
-	for(k in array_300ms){if(k!=0){print k;}}
+	for(k in array_300ms){if(k!=0){print k,array_300ms[k];}}
 	printf "===============200-300ms  end======================\n"
 
 	printf "===============300-500ms  start======================\n"
-	for(k in array_400ms){if(k!=0){print k;}}
+	for(k in array_400ms){if(k!=0){print k,array_400ms[k];}}
 	printf "===============300-500ms  end======================\n"
 
 	printf "===============500-1000ms  start======================\n"
-	for(k in array_1000ms){if(k!=0){print k;}}
+	for(k in array_1000ms){if(k!=0){print k,array_1000ms[k];}}
 	printf "===============500-1000ms  end======================\n"
 
 	printf "===============1-2s  start======================\n"
-	for(k in array_2000ms){if(k!=0){print k;}}
+	for(k in array_2000ms){if(k!=0){print k,array_2000ms[k];}}
 	printf "===============1-2s  end======================\n"
 
 	printf "===============2-3s  start======================\n"
-	for(k in array_3000ms){if(k!=0){print k;}}
+	for(k in array_3000ms){if(k!=0){print k,array_3000ms[k];}}
 	printf "===============2-3s  end======================\n"
 
 	printf "===============3-5s  start======================\n"
-	for(k in array_40000ms){if(k!=0){print k;}}
+	for(k in array_40000ms){if(k!=0){print k,array_40000ms[k];}}
 	printf "===============3-5s  end======================\n"	
 
 	printf "===============5s以上  start======================\n"
-	for(k in array_50000ms){if(k!=0){print k;}}
+	for(k in array_50000ms){if(k!=0){print k,array_50000ms[k];}}
 	printf "===============5s以上  end======================\n"					
 
 }
@@ -102,9 +106,8 @@ function calc(array, line, time){
 	}else{
 		method = substr(line,startIndex+4)
 	}
-	array[method]=time
+	array[method]++
 }
 ' result.log
 
-rm -fr  tt.log
 rm -fr result.log
