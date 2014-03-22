@@ -57,31 +57,31 @@ END {
 		if(k!=0){
 	        printf k": "
 	        if(methodRtArray[k,1]){
-	       		printf "0ms-100ms: "methodRtArray[k,1]
+	       		printf "0ms-100ms: "methodRtArray[k,1]";"
 	        }	        
 	        if(methodRtArray[k,2]){
-	       		printf "100ms-200ms: "methodRtArray[k,2]
+	       		printf "100ms-200ms: "methodRtArray[k,2]";"
 	        }
 	        if(methodRtArray[k,3]){
-	       		printf "200ms-300ms: "methodRtArray[k,3]
+	       		printf "200ms-300ms: "methodRtArray[k,3]";"
 	        }
 	        if(methodRtArray[k,4]){
-	       		printf "300ms-500ms: "methodRtArray[k,4]
+	       		printf "300ms-500ms: "methodRtArray[k,4]";"
 	        }
 	        if(methodRtArray[k,5]){
-	       		printf "500ms-1s: "methodRtArray[k,5]
+	       		printf "500ms-1s: "methodRtArray[k,5]";"
 	        }
 	        if(methodRtArray[k,6]){
-	       		printf "1s-2s: "methodRtArray[k,6]
+	       		printf "1s-2s: "methodRtArray[k,6]";"
 	        }
 	        if(methodRtArray[k,7]){
-	       		printf "2s-3s: "methodRtArray[k,7]
+	       		printf "2s-3s: "methodRtArray[k,7]";"
 	        }
 	        if(methodRtArray[k,8]){
-	       		printf "3s-5s: "methodRtArray[k,8]
+	       		printf "3s-5s: "methodRtArray[k,8]";"
 	        }
 	        if(methodRtArray[k,9]){
-	       		printf "5s以上: "methodRtArray[k,9]
+	       		printf "5s以上: "methodRtArray[k,9]";"
 	        }       
 	        printf"\n"  			
 		}
