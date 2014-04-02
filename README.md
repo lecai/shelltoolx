@@ -8,3 +8,9 @@ shelltool
 ./rt.sh //home/admin/cai/logs/cronolog/2014/03/2014-03-19-taobao-access_log "19/Mar/2014:20:01:" "19/Mar/2014:21:59:" 100000
 
 第一个参数为日志地址，参数2和参数3为起始时间，最后一个参数为min rt 即查找大于min rt的api请求
+
+
+
+messageStat.sh
+
+sh messageStat.sh  //home/admin/tpn/logs/access.log 1396407540000 1396407899000   (日志路径，开始时间，结束时间)
